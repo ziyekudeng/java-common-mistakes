@@ -3,7 +3,7 @@ services:
   redis:
     image: redis:3
     container_name: common-mistakes-redis-3
-    command: redis-server --appendonly yes
+    command: redis-server --appendonly yes --requirepass deepthink123
     ports:
       - "6379:6379"
   mysql57:
