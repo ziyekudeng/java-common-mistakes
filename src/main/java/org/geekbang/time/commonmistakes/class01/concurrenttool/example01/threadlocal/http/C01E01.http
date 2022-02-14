@@ -1,0 +1,10 @@
+### 没有意识到线程重用导致用户信息错乱的 Bug
+
+
+GET http://localhost:45678/threadlocal/wrong?userId=2
+Accept: application/json
+
+###
+
+GET http://localhost:45678/threadlocal/right?userId=1
+Accept: application/json

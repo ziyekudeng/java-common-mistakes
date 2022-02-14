@@ -1,0 +1,10 @@
+### 使用了线程安全的并发工具，并不代表解决了所有线程安全问题
+
+
+GET http://localhost:45678/concurrenthashmapmisuse/wrong
+Accept: application/json
+
+###
+
+GET http://localhost:45678/concurrenthashmapmisuse/right
+Accept: application/json

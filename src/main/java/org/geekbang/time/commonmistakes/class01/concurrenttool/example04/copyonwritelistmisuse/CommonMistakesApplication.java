@@ -1,17 +1,19 @@
-package org.geekbang.time.commonmistakes.concurrenttool.threadlocal;
+package org.geekbang.time.commonmistakes.class01.concurrenttool.example04.copyonwritelistmisuse;
 
-import org.geekbang.time.commonmistakes.common.Utils;
+import lombok.extern.java.Log;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
+@Log
 public class CommonMistakesApplication {
 
     public static void main(String[] args) {
-        Utils.loadPropertySource(CommonMistakesApplication.class, "tomcat.properties");
-
         SpringApplication.run(CommonMistakesApplication.class, args);
+        log.info("----------------------------------------");
+        log.info("class01 example04 启动成功");
+        log.info("----------------------------------------");
     }
 }
 

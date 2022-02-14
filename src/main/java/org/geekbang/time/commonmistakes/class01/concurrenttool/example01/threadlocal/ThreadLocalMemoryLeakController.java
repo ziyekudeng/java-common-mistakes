@@ -1,4 +1,4 @@
-package org.geekbang.time.commonmistakes.concurrenttool.threadlocal;
+package org.geekbang.time.commonmistakes.class01.concurrenttool.example01.threadlocal;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

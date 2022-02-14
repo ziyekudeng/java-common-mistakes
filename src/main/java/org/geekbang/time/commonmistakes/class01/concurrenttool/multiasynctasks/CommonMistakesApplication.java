@@ -1,4 +1,4 @@
-package org.geekbang.time.commonmistakes.concurrenttool.multiasynctasks;
+package org.geekbang.time.commonmistakes.class01.concurrenttool.multiasynctasks;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -78,3 +78,20 @@ services:
     ports:
       - "9203:9200"
       - "9303:9300"
+  influxdb:
+    image: "influxdb"
+    container_name: "iot-mp-influxdb_svcv2"
+    environment:
+      - INFLUXDB_REPORTING_DISABLED=true
+      - INFLUXDB_HTTP_FLUX_ENABLED=false
+      - INFLUXDB_HTTP_LOG_ENABLED=false
+      - INFLUXDB_HTTP_ACCESS_LOG_PATH=/var/lib/influxdb/influxdb_http.log
+      - INFLUXDB_RETENTION_ENABLED=true
+      - INFLUXDB_RETENTION_CHECK_INTERVAL=8h
+      - INFLUXDB_DB=iot
+    volumes:
+      - ./data:/var/lib/influxdb
+      - ./init/:/docker-entrypoint-initdb.d/
+    ports:
+      - "8086:8086"
+    restart: always

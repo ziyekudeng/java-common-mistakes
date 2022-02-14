@@ -1,4 +1,4 @@
-package org.geekbang.time.commonmistakes.concurrenttool.ciavspia;
+package org.geekbang.time.commonmistakes.class01.concurrenttool.ciavspia;
 
 import lombok.extern.slf4j.Slf4j;
 

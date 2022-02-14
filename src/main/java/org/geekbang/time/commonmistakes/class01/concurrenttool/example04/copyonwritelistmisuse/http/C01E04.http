@@ -1,0 +1,8 @@
+### 没有认清并发工具的使用场景，因而导致性能问题
+
+
+###
+GET http://localhost:45678/copyonwritelistmisuse/read
+
+###
+GET http://localhost:45678/copyonwritelistmisuse/write
