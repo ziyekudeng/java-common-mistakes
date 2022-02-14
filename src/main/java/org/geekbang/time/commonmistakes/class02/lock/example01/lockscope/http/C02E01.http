@@ -1,0 +1,15 @@
+### 没有意识到线程重用导致用户信息错乱的 Bug
+
+### 案例一
+GET http://localhost:45678/lockscope/wrong2
+###
+GET http://localhost:45678/lockscope/right2
+
+
+### 案例二
+GET http://localhost:45678/lockscope/wrong
+
+###
+GET http://localhost:45678/lockscope/right
+
+

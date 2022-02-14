@@ -1,7 +1,8 @@
-package org.geekbang.time.commonmistakes.lock.lockscope;
+package org.geekbang.time.commonmistakes.class02.lock.lockgranularity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 @SpringBootApplication
 public class CommonMistakesApplication {

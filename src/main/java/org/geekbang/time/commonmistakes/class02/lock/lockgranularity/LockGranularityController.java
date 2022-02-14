@@ -1,4 +1,4 @@
-package org.geekbang.time.commonmistakes.lock.lockgranularity;
+package org.geekbang.time.commonmistakes.class02.lock.lockgranularity;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

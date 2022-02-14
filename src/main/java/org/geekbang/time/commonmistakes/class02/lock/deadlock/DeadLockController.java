@@ -1,4 +1,4 @@
-package org.geekbang.time.commonmistakes.lock.deadlock;
+package org.geekbang.time.commonmistakes.class02.lock.deadlock;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
