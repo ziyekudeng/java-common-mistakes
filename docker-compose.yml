@@ -10,7 +10,7 @@ services:
     image: mysql:5.7
     container_name: common-mistakes-mysql57
     environment:
-      MYSQL_ROOT_PASSWORD: kIo9u7Oi0eg
+      MYSQL_ROOT_PASSWORD: deepthink123
     ports:
       - "6657:3306"
     volumes:
