@@ -63,8 +63,8 @@
 
 ### 加餐
 
-- 带你吃透课程中Java 8的那些重要知识点：[java8](src/main/java/org/geekbang/time/commonmistakes/class00/java8/)
-- 分析定位Java问题，一定要用好这些工具：[troubleshootingtools](src/main/java/org/geekbang/time/commonmistakes/class00/troubleshootingtools/)
+- 带你吃透课程中Java 8的那些重要知识点：[java8](src/main/java/org/geekbang/time/commonmistakes/basis/java8/)
+- 分析定位Java问题，一定要用好这些工具：[troubleshootingtools](src/main/java/org/geekbang/time/commonmistakes/basis/troubleshootingtools/)
 
 ### 内容脑图
 

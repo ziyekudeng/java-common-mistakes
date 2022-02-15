@@ -208,7 +208,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>org.geekbang.time.commonmistakes.class00.troubleshootingtools.jdktool.CommonMistakesApplication
+                    <mainClass>org.geekbang.time.commonmistakes.basis.troubleshootingtools.jdktool.CommonMistakesApplication
                     </mainClass>
                 </configuration>
             </plugin>
