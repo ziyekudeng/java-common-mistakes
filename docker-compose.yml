@@ -14,9 +14,9 @@ services:
     ports:
       - "6657:3306"
     volumes:
-      - "./db:/var/lib/mysql"
-      - "./conf/my.cnf:/etc/my.cnf"
-      - "./init:/docker-entrypoint-initdb.d/"
+      - "./mysql-init/db:/var/lib/mysql"
+      - "./mysql-init/conf/my.cnf:/etc/my.cnf"
+      - "./mysql-init/init:/docker-entrypoint-initdb.d/"
   rabbit:
     image: rabbitmq:management
     container_name: common-mistakes-rabbitmq
