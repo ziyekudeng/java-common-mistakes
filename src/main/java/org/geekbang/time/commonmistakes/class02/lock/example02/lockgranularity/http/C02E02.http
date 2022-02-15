@@ -1,0 +1,9 @@
+### 加锁要考虑锁的粒度和场景问题
+
+### 案例
+GET http://localhost:45678/lockgranularity/wrong
+
+###
+GET http://localhost:45678/lockgranularity/right
+
+

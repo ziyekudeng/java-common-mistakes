@@ -1,0 +1,9 @@
+### 多把锁要小心死锁问题
+
+### 案例
+GET http://localhost:45678/deadlock/wrong
+
+### ./wrk -c 2 -d 10s http://192.168.1.44:45678/deadlock/right
+GET http://localhost:45678/deadlock/right
+
+

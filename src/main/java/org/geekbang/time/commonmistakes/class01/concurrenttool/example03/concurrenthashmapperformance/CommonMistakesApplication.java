@@ -1,12 +1,12 @@
 package org.geekbang.time.commonmistakes.class01.concurrenttool.example03.concurrenthashmapperformance;
 
-import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@Log
+@Slf4j
 public class CommonMistakesApplication {
 
     public static void main(String[] args) {
