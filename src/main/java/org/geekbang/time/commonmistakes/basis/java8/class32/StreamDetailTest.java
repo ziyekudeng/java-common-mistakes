@@ -1,6 +1,6 @@
-package org.geekbang.time.commonmistakes.basis.java8;
+package org.geekbang.time.commonmistakes.basis.java8.class32;
 
-
+import org.geekbang.time.commonmistakes.basis.java8.Customer;
 import org.geekbang.time.commonmistakes.basis.java8.class31.example02.Product;
 import org.geekbang.time.commonmistakes.basis.java8.collector.MostPopularCollector;
 import org.junit.Before;
@@ -31,9 +31,16 @@ public class StreamDetailTest {
         orders.forEach(System.out::println);
         System.out.println("==========================================");
     }
-
+    /**
+     * @title filter
+     * @description 最近半年的金额大于40的订单
+     * @return : void
+     * @author gao wei
+     * @date 2022/2/16/0016 11:47
+     */
     @Test
     public void filter() {
+
         System.out.println("//最近半年的金额大于40的订单");
         orders.stream()
                 .filter(Objects::nonNull)
@@ -41,9 +48,16 @@ public class StreamDetailTest {
                 .filter(order -> order.getTotalPrice() > 40)
                 .forEach(System.out::println);
     }
-
+    /**
+     * @title map
+     * @description map 操作可以做转换（或者说投影），类似 SQL 中的 select
+     * @return : void
+     * @author gao wei
+     * @date 2022/2/16/0016 11:51
+     */
     @Test
     public void map() {
+
         //计算所有订单商品数量
         //通过两次遍历实现
         LongAdder longAdder = new LongAdder();
@@ -60,18 +74,32 @@ public class StreamDetailTest {
                 .mapToObj(i -> new Product((long) i, "product" + i, i * 100.0))
                 .collect(toList()));
     }
-
+    /**
+     * @title sorted
+     * @description sorted 操作可以用于行内排序的场景，类似 SQL 中的 order by
+     * @return : void
+     * @author gao wei
+     * @date 2022/2/16/0016 11:57
+     */
     @Test
     public void sorted() {
+
         System.out.println("//大于50的订单,按照订单价格倒序前5");
         orders.stream().filter(order -> order.getTotalPrice() > 50)
                 .sorted(comparing(Order::getTotalPrice).reversed())
                 .limit(5)
                 .forEach(System.out::println);
     }
-
+    /**
+     * @title flatMap
+     * @description flatMap相当于 map+flat，通过 map 把每一个元素替换为一个流，然后展开这个流
+     * @return : void
+     * @author gao wei
+     * @date 2022/2/16/0016 11:57
+     */
     @Test
     public void flatMap() {
+
         //不依赖订单上的总价格字段
         System.out.println(orders.stream().mapToDouble(order -> order.getTotalPrice()).sum());
 
@@ -87,9 +115,16 @@ public class StreamDetailTest {
                                 .stream().mapToDouble(item -> item.getProductQuantity() * item.getProductPrice()))
                 .sum());
     }
-
+    /**
+     * @title groupBy
+     * @description groupBy 是分组统计操作，类似 SQL 中的 group by 子句
+     * @return : void
+     * @author gao wei
+     * @date 2022/2/16/0016 13:26
+     */
     @Test
     public void groupBy() {
+
         System.out.println("//按照用户名分组，统计下单数量");
         System.out.println(orders.stream().collect(groupingBy(Order::getCustomerName, counting()))
                 .entrySet().stream().sorted(Map.Entry.<String, Long>comparingByValue().reversed()).collect(toList()));
@@ -154,9 +189,16 @@ public class StreamDetailTest {
                 .reduce(BinaryOperator.maxBy(Map.Entry.comparingByValue()))
                 .map(Map.Entry::getKey).orElse("N/A"));
     }
-
+    /**
+     * @title distinct
+     * @description distinct 操作的作用是去重，类似 SQL 中的 distinct
+     * @return : void
+     * @author gao wei
+     * @date 2022/2/16/0016 11:58
+     */
     @Test
     public void distinct() {
+
         System.out.println("//不去重的下单用户");
         System.out.println(orders.stream().map(order -> order.getCustomerName()).collect(joining(",")));
 
@@ -169,9 +211,16 @@ public class StreamDetailTest {
                 .map(OrderItem::getProductName)
                 .distinct().collect(joining(",")));
     }
-
+    /**
+     * @title collect
+     * @description collect 是收集操作，对流进行终结（终止）操作，把流导出为我们需要的数据结构
+     * @return : void
+     * @author gao wei
+     * @date 2022/2/16/0016 12:00
+     */
     @Test
     public void collect() {
+
         System.out.println("//生成一定位数的随机字符串");
         System.out.println(random.ints(48, 122)
                 .filter(i -> (i < 57 || i > 65) && (i < 90 || i > 97))
@@ -203,9 +252,16 @@ public class StreamDetailTest {
                 order.getOrderItemList().stream()
                         .collect(summingInt(OrderItem::getProductQuantity)))));
     }
-
+    /**
+     * @title partition
+     * @description partitioningBy 用于分区，分区是特殊的分组，只有 true 和 false 两组
+     * @return : void
+     * @author gao wei
+     * @date 2022/2/16/0016 13:30
+     */
     @Test
     public void partition() {
+
         //先来看一下所有下单的用户
         orders.stream().map(order -> order.getCustomerName()).collect(toSet()).forEach(System.out::println);
         //根据是否有下单记录进行分区
@@ -213,9 +269,16 @@ public class StreamDetailTest {
                 partitioningBy(customer -> orders.stream().mapToLong(Order::getCustomerId)
                         .anyMatch(id -> id == customer.getId()))));
     }
-
+    /**
+     * @title skipLimit
+     * @description skip 和 limit 操作用于分页，类似 MySQL 中的 limit。其中，skip 实现跳过一定的项，limit 用于限制项总数
+     * @return : void
+     * @author gao wei
+     * @date 2022/2/16/0016 11:59
+     */
     @Test
     public void skipLimit() {
+
         orders.stream()
                 .sorted(comparing(Order::getPlacedAt))
                 .map(order -> order.getCustomerName() + "@" + order.getPlacedAt())
